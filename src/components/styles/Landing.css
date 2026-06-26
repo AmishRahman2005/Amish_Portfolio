@@ -4,7 +4,7 @@
 }
 
 /* Remove mobile photo and ensure 3D character is always hidden on mobile */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .character-model {
     display: none !important;
   }

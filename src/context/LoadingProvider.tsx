@@ -17,8 +17,8 @@ export const LoadingContext = createContext<LoadingType | null>(null);
 
 export const LoadingProvider = ({ children }: PropsWithChildren) => {
   const [isLoading, setIsLoading] = useState(() => {
-    // Skip loading on mobile
-    if (window.innerWidth <= 768) return false;
+    // Skip loading on mobile and tablet views where the 3D model is not rendered
+    if (window.innerWidth <= 1024) return false;
     return true;
   });
   const [loading, setLoading] = useState(0);
@@ -29,8 +29,8 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
     setLoading,
   };
   useEffect(() => {
-    // Auto-start animations on mobile since there's no 3D model
-    if (window.innerWidth <= 768) {
+    // Auto-start animations on mobile/tablet since there's no 3D model
+    if (window.innerWidth <= 1024) {
       import("../components/utils/initialFX").then((module) => {
         if (module.initialFX) {
           setTimeout(() => {
