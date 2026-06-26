@@ -17,7 +17,7 @@ const Scene = () => {
   const canvasDiv = useRef<HTMLDivElement | null>(null);
   const hoverDivRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef(new THREE.Scene());
-  const { setLoading } = useLoading();
+  const { setLoading, setIsLoading } = useLoading();
 
   const [character, setChar] = useState<THREE.Object3D | null>(null);
   useEffect(() => {
@@ -77,6 +77,15 @@ const Scene = () => {
             handleResize(renderer, camera, canvasDiv, character)
           );
         }
+      }).catch((err) => {
+        console.error("Failed to load 3D character model:", err);
+        progress.clear();
+        import("../utils/initialFX").then((module) => {
+          if (module.initialFX) {
+            module.initialFX();
+          }
+          setIsLoading(false);
+        });
       });
 
       let mouse = { x: 0, y: 0 },
