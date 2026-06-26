@@ -24,15 +24,17 @@ const Contact = () => {
   } | null>(null);
 
   useEffect(() => {
-    fetch("https://alfa-leetcode-api.onrender.com/AmishRahman/solved")
+    fetch("https://alfa-leetcode-api.onrender.com/AmishRahman/solved?t=" + Date.now(), {
+      cache: "no-store"
+    })
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch");
         return res.json();
       })
       .then((data) => {
         setLeetcodeStats({
-          solvedProblem: data.solvedProblem || 102,
-          easySolved: data.easySolved || 80,
+          solvedProblem: data.solvedProblem || 104,
+          easySolved: data.easySolved || 82,
           mediumSolved: data.mediumSolved || 22,
           hardSolved: data.hardSolved || 0,
         });
@@ -41,8 +43,8 @@ const Contact = () => {
         console.error("Error fetching LeetCode stats:", err);
         // Fallback to static data from resume
         setLeetcodeStats({
-          solvedProblem: 102,
-          easySolved: 80,
+          solvedProblem: 104,
+          easySolved: 82,
           mediumSolved: 22,
           hardSolved: 0,
         });
