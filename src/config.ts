@@ -18,7 +18,7 @@ export const config = {
         {
             position: "Bachelor of Technology in CSE",
             company: "NMAM Institute of Technology (NMAMIT)",
-            period: "2024 - 2028",
+            period: "2024 - Present",
             location: "Nitte, Karnataka",
             description: "Pursuing B.Tech in Computer Science and Engineering with a focus on algorithm designs, software architectures, and computation foundations. Specialized in studying core subjects: DSA, OOP, DBMS, OS, COA, and Software Engineering.",
             responsibilities: [
@@ -34,7 +34,7 @@ export const config = {
         {
             position: "Senior Secondary (XII), Loyola School",
             company: "Jamshedpur (ISC)",
-            period: "2024",
+            period: "2022 - 2024",
             location: "Jamshedpur, India",
             description: "Completed senior secondary education focusing on Physics, Chemistry, and Mathematics (PCM). Achieved a board percentage of 90.25%.",
             responsibilities: [
