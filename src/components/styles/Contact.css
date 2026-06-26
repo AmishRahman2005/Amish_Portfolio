@@ -1,0 +1,451 @@
+.contact-section {
+  margin: auto;
+  padding-bottom: 150px;
+  margin-top: 0;
+  position: relative;
+  z-index: 1;
+  background-color: var(--backgroundColor);
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Main Grid Layout */
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Left Column: Form Styling */
+.contact-form-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-title {
+  font-size: 32px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0 0 30px 0;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #c2a4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-input-group {
+  position: relative;
+  width: 100%;
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+.contact-textarea {
+  resize: vertical;
+}
+
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: rgba(194, 164, 255, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 20px rgba(194, 164, 255, 0.15), 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Submit Button */
+.contact-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0d0915;
+  background: linear-gradient(135deg, #c2a4ff 0%, #ec4899 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(194, 164, 255, 0.2);
+}
+
+.contact-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(194, 164, 255, 0.4);
+  opacity: 0.95;
+}
+
+.contact-submit-btn:disabled {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.4);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.send-icon {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.contact-submit-btn:hover .send-icon {
+  transform: translate(3px, -3px);
+}
+
+/* Status Notifications */
+.contact-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.contact-status.success {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+}
+
+.contact-status.warning {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #f59e0b;
+}
+
+.contact-status.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+.status-icon {
+  font-size: 18px;
+}
+
+.contact-status p {
+  margin: 0 !important;
+}
+
+/* Right Column: Info Styling */
+.contact-info-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info-title {
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0 0 30px 0;
+  color: #ffffff;
+}
+
+.contact-info-subgrid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contact-flex h4 {
+  font-weight: 500;
+  margin: 0;
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-box h4 {
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  opacity: 0.6;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-box p {
+  margin: 0 0 20px 0;
+  font-size: 15px;
+}
+
+.contact-box p span {
+  font-weight: 500;
+}
+
+.contact-box p a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-box p a:hover {
+  color: #c2a4ff;
+}
+
+a.contact-social {
+  font-size: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  min-width: 150px;
+  transition: all 0.3s ease;
+}
+
+a.contact-social:hover {
+  color: #c2a4ff;
+  border-color: #c2a4ff;
+  padding-right: 4px;
+}
+
+.contact-box h2 {
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0 0 12px 0;
+  line-height: 24px;
+}
+
+.contact-box h2 > span {
+  color: var(--accentColor);
+}
+
+.contact-box h5 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  opacity: 0.5;
+  margin: 0;
+}
+
+/* Responsiveness media queries */
+@media only screen and (min-width: 600px) {
+  .contact-form-title,
+  .contact-info-title {
+    font-size: 40px;
+  }
+  .contact-box h2 {
+    font-size: 18px;
+  }
+  a.contact-social {
+    font-size: 18px;
+  }
+  .contact-box p {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .contact-form-title,
+  .contact-info-title {
+    font-size: 48px;
+  }
+  .contact-box h2 {
+    font-size: 20px;
+  }
+  a.contact-social {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .contact-form-title,
+  .contact-info-title {
+    font-size: 55px;
+  }
+}
+
+.leetcode-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: fit-content;
+  min-width: 250px;
+}
+
+.leetcode-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(194, 164, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(194, 164, 255, 0.15), 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.leetcode-stats-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 15px;
+}
+
+.leetcode-circle-progress {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.circular-chart {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-width: 3.8;
+}
+
+.circle-progress {
+  fill: none;
+  stroke: url(#leetcode-grad);
+  stroke-width: 3.8;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.6s ease;
+}
+
+.leetcode-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.leetcode-percentage .solved-count {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.leetcode-percentage .solved-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+.leetcode-details-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.leetcode-stat-row {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.leetcode-stat-row .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.leetcode-stat-row.easy .dot {
+  background-color: #00b8a3;
+}
+
+.leetcode-stat-row.medium .dot {
+  background-color: #ffc01e;
+}
+
+.leetcode-stat-row.hard .dot {
+  background-color: #ef4743;
+}
+
+.leetcode-stat-row .label {
+  color: rgba(255, 255, 255, 0.6);
+  flex: 1;
+  font-size: 13px;
+}
+
+.leetcode-stat-row .value {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+@media only screen and (max-width: 900px) {
+  .contact-main-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .contact-section {
+    padding-bottom: 80px;
+  }
+  .contact-container {
+    width: calc(100% - 30px);
+    margin: 0 auto;
+  }
+  .leetcode-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

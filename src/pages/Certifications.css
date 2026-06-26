@@ -1,0 +1,580 @@
+.certifications-page {
+  min-height: 100vh;
+  background-color: var(--backgroundColor);
+  padding: 80px 40px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.certifications-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.certifications-header h1 {
+  font-size: 70px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.certifications-header h1 span {
+  color: var(--accentColor);
+}
+
+.certifications-header p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Category Tabs */
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.tab-btn {
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.tab-btn.active {
+  background: var(--accentColor);
+  color: #000;
+  border-color: var(--accentColor);
+  box-shadow: 0 4px 20px rgba(194, 164, 255, 0.3);
+}
+
+/* 3D Carousel Viewport Layout */
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 38rem;
+  margin: 20px 0;
+  position: relative;
+  overflow: visible;
+}
+
+.fan-layout {
+  position: relative;
+  width: 100%;
+  max-width: 80rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+/* 3D Fan Cards */
+.fan-card {
+  position: absolute;
+  width: 20rem;
+  height: 28rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transform-origin: center center;
+  opacity: 0; /* Driven dynamically by GSAP */
+}
+
+/* Back Button */
+.back-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #fff;
+}
+
+/* Card Header Section */
+.cert-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 10;
+}
+
+.cert-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.cert-date {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  white-space: nowrap;
+}
+
+/* Card Body Section */
+.cert-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+  z-index: 10;
+  width: 100%;
+}
+
+.cat-icon-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.fan-card:hover .cat-icon-container {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.cat-svg {
+  width: 22px;
+  height: 22px;
+}
+
+.cert-card-body h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 16px 0;
+  color: #fff;
+  max-width: 100%;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Copy ID Badge Section */
+.credential-id-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.credential-id-badge:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.credential-id-badge.copied {
+  background: rgba(46, 200, 102, 0.12) !important;
+  border-color: rgba(46, 200, 102, 0.3) !important;
+  color: #2ec866 !important;
+}
+
+.id-label {
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.id-value {
+  font-family: monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copy-action-text {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.4;
+  padding-left: 4px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copied .copy-action-text {
+  opacity: 0.9;
+  border-color: rgba(46, 200, 102, 0.2);
+}
+
+/* Card Skills Footer Section */
+.cert-card-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 14px;
+  width: 100%;
+  z-index: 10;
+}
+
+.cert-skills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-badge {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* Issuer Specific Colors & Glows */
+
+/* HackerRank (Green Accent) */
+.fan-card.issuer-hackerrank {
+  border-color: rgba(46, 200, 102, 0.15);
+  box-shadow: 0 10px 40px rgba(46, 200, 102, 0.03), 0 0 1px rgba(46, 200, 102, 0.2) inset;
+}
+.fan-card.issuer-hackerrank:hover {
+  border-color: rgba(46, 200, 102, 0.5);
+  box-shadow: 0 15px 45px rgba(46, 200, 102, 0.15);
+}
+.fan-card.issuer-hackerrank .cert-badge {
+  color: #2ec866;
+  background: rgba(46, 200, 102, 0.08);
+  border-color: rgba(46, 200, 102, 0.2);
+}
+
+/* Microsoft (Blue Accent) */
+.fan-card.issuer-microsoft {
+  border-color: rgba(0, 164, 239, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 164, 239, 0.03), 0 0 1px rgba(0, 164, 239, 0.2) inset;
+}
+.fan-card.issuer-microsoft:hover {
+  border-color: rgba(0, 164, 239, 0.5);
+  box-shadow: 0 15px 45px rgba(0, 164, 239, 0.15);
+}
+.fan-card.issuer-microsoft .cert-badge {
+  color: #00a4ef;
+  background: rgba(0, 164, 239, 0.08);
+  border-color: rgba(0, 164, 239, 0.2);
+}
+
+/* AWS (Orange Accent) */
+.fan-card.issuer-aws {
+  border-color: rgba(255, 153, 0, 0.15);
+  box-shadow: 0 10px 40px rgba(255, 153, 0, 0.03), 0 0 1px rgba(255, 153, 0, 0.2) inset;
+}
+.fan-card.issuer-aws:hover {
+  border-color: rgba(255, 153, 0, 0.5);
+  box-shadow: 0 15px 45px rgba(255, 153, 0, 0.15);
+}
+.fan-card.issuer-aws .cert-badge {
+  color: #ff9900;
+  background: rgba(255, 153, 0, 0.08);
+  border-color: rgba(255, 153, 0, 0.2);
+}
+
+/* HP LIFE (Cyan Accent) */
+.fan-card.issuer-hp {
+  border-color: rgba(0, 150, 214, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 150, 214, 0.03), 0 0 1px rgba(0, 150, 214, 0.2) inset;
+}
+.fan-card.issuer-hp:hover {
+  border-color: rgba(0, 150, 214, 0.5);
+  box-shadow: 0 15px 45px rgba(0, 150, 214, 0.15);
+}
+.fan-card.issuer-hp .cert-badge {
+  color: #0096d6;
+  background: rgba(0, 150, 214, 0.08);
+  border-color: rgba(0, 150, 214, 0.2);
+}
+
+/* LinkedIn (Linkedin Blue) */
+.fan-card.issuer-linkedin {
+  border-color: rgba(10, 102, 194, 0.15);
+  box-shadow: 0 10px 40px rgba(10, 102, 194, 0.03), 0 0 1px rgba(10, 102, 194, 0.2) inset;
+}
+.fan-card.issuer-linkedin:hover {
+  border-color: rgba(10, 102, 194, 0.5);
+  box-shadow: 0 15px 45px rgba(10, 102, 194, 0.15);
+}
+.fan-card.issuer-linkedin .cert-badge {
+  color: #0a66c2;
+  background: rgba(10, 102, 194, 0.08);
+  border-color: rgba(10, 102, 194, 0.2);
+}
+
+/* Scaler (Indigo/Purple Accent) */
+.fan-card.issuer-scaler {
+  border-color: rgba(79, 70, 229, 0.15);
+  box-shadow: 0 10px 40px rgba(79, 70, 229, 0.03), 0 0 1px rgba(79, 70, 229, 0.2) inset;
+}
+.fan-card.issuer-scaler:hover {
+  border-color: rgba(79, 70, 229, 0.5);
+  box-shadow: 0 15px 45px rgba(79, 70, 229, 0.15);
+}
+.fan-card.issuer-scaler .cert-badge {
+  color: #4f46e5;
+  background: rgba(79, 70, 229, 0.08);
+  border-color: rgba(79, 70, 229, 0.2);
+}
+
+/* Infosys (Teal Accent) */
+.fan-card.issuer-infosys {
+  border-color: rgba(0, 124, 195, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 124, 195, 0.03), 0 0 1px rgba(0, 124, 195, 0.2) inset;
+}
+.fan-card.issuer-infosys:hover {
+  border-color: rgba(0, 124, 195, 0.5);
+  box-shadow: 0 15px 45px rgba(0, 124, 195, 0.15);
+}
+.fan-card.issuer-infosys .cert-badge {
+  color: #007cc3;
+  background: rgba(0, 124, 195, 0.08);
+  border-color: rgba(0, 124, 195, 0.2);
+}
+
+/* Google & Coursera (Default Purple Accent Theme) */
+.fan-card.issuer-google {
+  border-color: rgba(194, 164, 255, 0.15);
+  box-shadow: 0 10px 40px rgba(194, 164, 255, 0.03), 0 0 1px rgba(194, 164, 255, 0.2) inset;
+}
+.fan-card.issuer-google:hover {
+  border-color: rgba(194, 164, 255, 0.5);
+  box-shadow: 0 15px 45px rgba(194, 164, 255, 0.15);
+}
+.fan-card.issuer-google .cert-badge {
+  color: var(--accentColor);
+  background: rgba(194, 164, 255, 0.08);
+  border-color: rgba(194, 164, 255, 0.2);
+}
+
+/* Default Fallback */
+.fan-card.issuer-default {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+.fan-card.issuer-default:hover {
+  border-color: var(--accentColor);
+  box-shadow: 0 15px 45px rgba(194, 164, 255, 0.12);
+}
+.fan-card.issuer-default .cert-badge {
+  color: var(--accentColor);
+  background: rgba(194, 164, 255, 0.08);
+  border-color: rgba(194, 164, 255, 0.15);
+}
+
+/* Carousel Controls & Pagination Buttons */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  z-index: 30;
+  position: relative;
+}
+
+.carousel-control-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  flex-shrink: 0;
+  z-index: 30;
+  outline: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.carousel-control-btn::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
+.carousel-control-btn:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.05);
+}
+
+.carousel-control-btn:active {
+  opacity: 0.7;
+  transform: scale(0.95);
+}
+
+.chevron-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: var(--accentColor);
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(194, 164, 255, 0.5);
+}
+
+/* Responsive Scaling Design Adjustments */
+
+@media only screen and (max-width: 1024px) {
+  .certifications-header h1 {
+    font-size: 55px;
+  }
+  .carousel-wrapper {
+    min-height: 32rem;
+  }
+  .fan-card {
+    width: 16rem;
+    height: 23rem;
+    border-radius: 20px;
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .certifications-page {
+    padding: 60px 20px;
+  }
+  .certifications-header h1 {
+    font-size: 40px;
+  }
+  .category-tabs {
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+  .tab-btn {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+  .carousel-wrapper {
+    min-height: 28rem;
+  }
+  .fan-card {
+    width: 14rem;
+    height: 20rem;
+    border-radius: 16px;
+    padding: 16px;
+  }
+  .carousel-controls {
+    margin-top: 25px;
+    gap: 15px;
+  }
+  .carousel-control-btn {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+  .chevron-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+  .carousel-dots {
+    padding: 6px 12px;
+  }
+  .carousel-dot {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .certifications-header h1 {
+    font-size: 32px;
+  }
+  .carousel-wrapper {
+    min-height: 22rem;
+  }
+  .fan-card {
+    width: 11rem;
+    height: 16.5rem;
+    border-radius: 12px;
+    padding: 12px;
+  }
+}

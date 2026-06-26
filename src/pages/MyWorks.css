@@ -1,0 +1,426 @@
+/* Base layout override for immersive full-screen storytelling */
+.myworks-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0d0915;
+  color: #ffffff;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/* Cosmic backdrop glow */
+.myworks-bg-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.12) 0%, rgba(236, 72, 153, 0.04) 50%, rgba(13, 9, 21, 0) 100%);
+  filter: blur(40px);
+}
+
+/* Top nav panel styling */
+.myworks-header-nav {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back-button-nav {
+  display: inline-block;
+  pointer-events: auto;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.back-button-nav:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: #c2a4ff;
+  box-shadow: 0 0 15px rgba(194, 164, 255, 0.2);
+}
+
+.myworks-header-nav h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.myworks-header-nav h1 span {
+  color: #c2a4ff;
+  background: linear-gradient(135deg, #c2a4ff 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.myworks-header-nav p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* Center intro text panel */
+.myworks-center-text-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.myworks-center-text {
+  text-align: center;
+}
+
+.myworks-center-text h2 {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px 0;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.myworks-center-text p {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.25em;
+  margin: 0;
+}
+
+/* Animation Canvas Container */
+.myworks-canvas-container {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+/* 3D Card Wrapper positioning */
+.myworks-card-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 175px;
+  height: 245px;
+  margin-left: -87.5px;
+  margin-top: -122.5px;
+  transform-style: preserve-3d;
+  z-index: 3;
+}
+
+.myworks-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+/* Card Front and Back Shared Styles (Glassmorphic basis) */
+.myworks-card-front,
+.myworks-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Front face styling */
+.myworks-card-front {
+  background: rgba(255, 255, 255, 0.03);
+  transform: translateZ(1px);
+}
+
+.myworks-card-wrapper:hover .myworks-card-front {
+  border-color: rgba(194, 164, 255, 0.3);
+  box-shadow: 0 0 25px rgba(194, 164, 255, 0.15);
+}
+
+.myworks-card-number {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #c2a4ff;
+  background: rgba(13, 9, 21, 0.7);
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 2;
+}
+
+.myworks-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.myworks-card-front-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13, 9, 21, 0.95) 0%, rgba(13, 9, 21, 0.3) 60%, rgba(13, 9, 21, 0) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  z-index: 2;
+}
+
+.myworks-card-front-title-container h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.myworks-card-front-title-container p {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0 0 10px 0;
+}
+
+.myworks-flip-badge {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 6px;
+  display: block;
+}
+
+/* Back Face Styling (Rich glassmorphism details card) */
+.myworks-card-back {
+  transform: rotateY(180deg) translateZ(1px);
+  background: rgba(18, 12, 30, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.myworks-card-wrapper:hover .myworks-card-back {
+  border-color: rgba(194, 164, 255, 0.4);
+  box-shadow: 0 0 30px rgba(194, 164, 255, 0.2);
+}
+
+.myworks-card-back-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.myworks-card-back-content h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.myworks-back-category {
+  font-size: 10px;
+  font-weight: 500;
+  color: #c2a4ff;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.myworks-back-desc {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.45;
+  margin: 0 0 10px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.myworks-back-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.tech-pill {
+  font-size: 9px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.myworks-card-links {
+  display: flex;
+  gap: 8px;
+  pointer-events: auto;
+  z-index: 5;
+  margin-top: auto;
+}
+
+.card-link {
+  flex: 1;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 0;
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.github-link {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.github-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.demo-link {
+  background: linear-gradient(135deg, #c2a4ff 0%, #ec4899 100%);
+  color: #0d0915;
+  font-weight: 700;
+}
+
+.demo-link:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 12px rgba(194, 164, 255, 0.45);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .myworks-header-nav {
+    top: 25px;
+  }
+
+  .myworks-header-nav h1 {
+    font-size: 26px;
+  }
+
+  .myworks-header-nav p {
+    font-size: 11px;
+    padding: 0 20px;
+  }
+
+  .back-button-nav {
+    font-size: 12px;
+    padding: 6px 14px;
+    margin-bottom: 12px;
+  }
+
+  .myworks-center-text h2 {
+    font-size: 20px;
+    padding: 0 30px;
+  }
+
+  .myworks-center-text p {
+    font-size: 9px;
+  }
+
+  .myworks-card-wrapper {
+    width: 115px;
+    height: 165px;
+    margin-left: -57.5px;
+    margin-top: -82.5px;
+  }
+
+  .myworks-card-front-title-container h3 {
+    font-size: 11px;
+  }
+
+  .myworks-card-front-title-container p {
+    font-size: 9px;
+    margin-bottom: 4px;
+  }
+
+  .myworks-card-front-overlay {
+    padding: 10px;
+  }
+
+  .myworks-card-back {
+    padding: 10px;
+  }
+
+  .myworks-card-back-content h4 {
+    font-size: 11px;
+  }
+
+  .myworks-back-category {
+    font-size: 8px;
+    margin-bottom: 6px;
+  }
+
+  .myworks-back-desc {
+    font-size: 9px;
+    -webkit-line-clamp: 3;
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+
+  .myworks-back-tech {
+    margin-bottom: 6px;
+  }
+
+  .tech-pill {
+    font-size: 7px;
+    padding: 1px 4px;
+  }
+
+  .card-link {
+    font-size: 8px;
+    padding: 4px 0;
+  }
+}
